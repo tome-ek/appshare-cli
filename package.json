@@ -42,7 +42,7 @@
     "bin": "appshare",
     "plugins": []
   },
-  "repository": "cli/appshare",
+  "repository": "tome-ek/appshare-cli",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
