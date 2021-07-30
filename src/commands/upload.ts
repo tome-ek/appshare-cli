@@ -151,7 +151,7 @@ export default class Upload extends Command {
         console.log(chalk.green.bold('App uploaded successfully!'));
         console.log(
           'You can view your app at ' +
-            chalk.bgCyan.black('https://appshare.dev/app/' + ctx.appId)
+            chalk.bgCyan.black('https://localhost:3001/app/' + ctx.appId)
         );
         await cli.open('http://localhost:3001/app/' + ctx.appId);
       })

@@ -15,15 +15,15 @@ export interface UserInputCollector {
 
 export const userInputCollector = (): UserInputCollector => {
   return {
-    collectBuildOptions: async availableOptions => {
-      await inquirer.prompt<UserBuildOptions>(
+    collectBuildOptions: availableOptions => {
+      return inquirer.prompt<UserBuildOptions>(
         [
           {
             type: 'list',
             name: 'scheme',
             message: 'Select a scheme to build',
             default: 0,
-            choices: [...availableOptions.schemes, 'MyAppDev'],
+            choices: availableOptions.schemes,
             pageSize: 10,
             when: () => {
               return availableOptions.schemes.length > 1;
@@ -35,7 +35,7 @@ export const userInputCollector = (): UserInputCollector => {
             name: 'target',
             message: 'Pick a target to build',
             default: 0,
-            choices: [...availableOptions.targets, 'MyApp'],
+            choices: availableOptions.targets,
             pageSize: 10,
             when: () => {
               return availableOptions.targets.length > 1;
@@ -61,11 +61,6 @@ export const userInputCollector = (): UserInputCollector => {
           buildConfiguration: availableOptions.buildConfigurations[0],
         }
       );
-      return {
-        scheme: availableOptions.schemes[0],
-        target: availableOptions.targets[0],
-        buildConfiguration: availableOptions.buildConfigurations[0],
-      };
     },
   };
 };
