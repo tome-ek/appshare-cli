@@ -1,0 +1,69 @@
+{
+  "name": "appshare-cli",
+  "description": "Upload your iOS app to Appshare with just a single command.",
+  "version": "0.1.0",
+  "author": "Tomasz Bartkowski",
+  "bin": {
+    "appshare": "./bin/run"
+  },
+  "bugs": "https://github.com/tome-ek/appshare-cli/issues",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@types/archiver": "^5.1.1",
+    "@types/chalk": "^2.2.0",
+    "@types/del": "^4.0.0",
+    "@types/execa": "^0.9.0",
+    "@types/inquirer": "^7.3.3",
+    "@types/listr": "^0.14.4",
+    "@types/node": "^10.17.60",
+    "@types/node-fetch": "^2.5.12",
+    "globby": "^10.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.10"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/tome-ek/appshare-cli",
+  "keywords": [
+    "appshare",
+    "appshare-cli"
+  ],
+  "license": "GNU AGPL v3",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "appshare",
+    "plugins": []
+  },
+  "repository": "cli/appshare",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.2",
+    "archiver": "^5.3.0",
+    "chalk": "^2.4.2",
+    "cli-ux": "^5.6.3",
+    "conf": "^10.0.1",
+    "del": "^6.0.0",
+    "execa": "1.0.0",
+    "http-call": "^5.3.0",
+    "inquirer": "^8.1.2",
+    "listr": "^0.14.3",
+    "node-fetch": "^2.6.1",
+    "tslib": "^1.14.1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "commands": {
+    "login": {
+      "id": "login",
+      "description": "Signs into your Appshare account to authorize future commands.",
+      "pluginName": "appshare",
+      "pluginType": "core",
+      "aliases": [],
+      "flags": {
+        "help": {
+          "name": "help",
+          "type": "boolean",
+          "char": "h",
+          "description": "show CLI help",
+          "allowNo": false
+        }
+      },
+      "args": []
+    },
+    "upload": {
+      "id": "upload",
+      "description": "Upload your app to Appshare.",
+      "pluginName": "appshare",
+      "pluginType": "core",
+      "aliases": [],
+      "flags": {
+        "path": {
+          "name": "path",
+          "type": "option",
+          "char": "p",
+          "description": "The root directory of your Xcode project. Defaults to current working directory.",
+          "required": false
+        }
+      },
+      "args": []
+    }
+  }
+}
